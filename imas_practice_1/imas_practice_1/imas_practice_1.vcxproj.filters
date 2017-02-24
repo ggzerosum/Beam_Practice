@@ -16,15 +16,36 @@
     <Filter Include="클래스 파일">
       <UniqueIdentifier>{c797765b-f8ab-4bf3-b2f4-be08929deaad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="클래스 파일\아이돌">
+      <UniqueIdentifier>{8cbe4d70-e4a3-4746-bd8d-b18adddfec84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="클래스 파일\양성소">
+      <UniqueIdentifier>{ed36ed35-acb0-4840-8e45-d906088635ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="idol.cpp">
+      <Filter>클래스 파일\아이돌</Filter>
+    </ClCompile>
+    <ClCompile Include="factory.cpp">
+      <Filter>클래스 파일\양성소</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="idol.h">
+      <Filter>클래스 파일\아이돌</Filter>
+    </ClInclude>
+    <ClInclude Include="classes.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="factory.h">
+      <Filter>클래스 파일\양성소</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
