@@ -47,8 +47,11 @@ void factory::CreateIdolList(void)
 idol* factory::SearchIdol(void)
 {
 	char name[32] = { '\0' };
-	cout << "검색할 이름: ";
+	cout << "시호가 대화할 상대: ";
 	fgets(name, 32, stdin);
+
+	if (name[strlen(name) - 1] == '\n')
+		name[strlen(name) - 1] = '\0';
 
 	for (int i = 0; i < SizeOfList; i++)
 	{
@@ -56,13 +59,16 @@ idol* factory::SearchIdol(void)
 
 		if (!check)
 		{
-			cout << "찾았습니다!" << endl;
 			return ListOfIdols[i];
 		}
 	}
 
-	cout << "찾을 수 없는 이름입니다." << endl;
 	return nullptr;
+}
+
+idol* factory::SearchIdol(int index)
+{
+	return ListOfIdols[index];
 }
 
 factory* factory::itSelf(void)

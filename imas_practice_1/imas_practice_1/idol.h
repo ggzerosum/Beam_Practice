@@ -12,6 +12,7 @@ private:
 	char* words;
 protected:
 	void StrToDes(char* &destination, const char* source);
+	void PrintText(const char* text);
 public:
 	int GetAge() const;
 	int GetSize() const;
@@ -19,6 +20,6 @@ public:
 	const char* GetWords() const;
 
 //아이돌의 행동(일명 메서드 Method)
-	void DoHateSpeech(const idol &target);
+	void DoHateSpeech(const idol* target);
 };
 

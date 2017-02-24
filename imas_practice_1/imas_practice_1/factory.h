@@ -13,6 +13,6 @@ private:
 public:
 	void CreateIdolList(void);
 	idol* SearchIdol(void);
+	idol* SearchIdol(int index);
 	static factory* itSelf(void);
 };
-

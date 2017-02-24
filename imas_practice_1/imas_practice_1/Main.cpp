@@ -1,13 +1,25 @@
+/*
+	시호의 헤이트 스피치
+	version : 1.0
+	완성일자: 2017.2.25
+*/
+
 #include "includes.h"
 #include "classes.h"
 
 void main(void)
 {
-	//시호짱 생성!!
-	idol SihoZZang(17, 83, "키타자와 시호", "어당리~?");
-
+	bool key = true;
+	idol* siho;
 	factory::itSelf()->CreateIdolList();
+	siho = factory::itSelf()->SearchIdol(0);
 
-	//시호짱에게 행동을 명령해보자!
-	SihoZZang.DoHateSpeech(*factory::itSelf()->SearchIdol());
+	while (key)
+	{
+		//시호짱에게 행동을 명령해보자!
+		siho->DoHateSpeech(factory::itSelf()->SearchIdol());
+
+		Sleep(5000);
+		system("cls");
+	}
 }
