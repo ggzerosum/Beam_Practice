@@ -19,7 +19,7 @@ void main(void)
 		//시호짱에게 행동을 명령해보자!
 		siho->DoHateSpeech(factory::itSelf()->SearchIdol());
 
-		Sleep(5000);
+		Sleep(2000);
 		system("cls");
 	}
 }
