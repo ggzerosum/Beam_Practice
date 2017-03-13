@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Classes Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Classes Files\Items">
+      <UniqueIdentifier>{5188f779-7250-49f3-894b-9bbc83304632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Inventory">
+      <UniqueIdentifier>{9ae46cbe-6a4b-413f-9a0c-b8063493b37f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\SmartPointer">
+      <UniqueIdentifier>{40028034-6cb9-446a-a6da-74e4979521e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Character">
+      <UniqueIdentifier>{7fa96ce8-055a-43d3-9fc1-bf12408ac441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Character\Playable">
+      <UniqueIdentifier>{431c7b3b-6858-4f12-8b52-71332d4157b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Character\Staff">
+      <UniqueIdentifier>{1a22b53c-d45d-4ff7-98cc-02fd5c7f973d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Struct Files">
+      <UniqueIdentifier>{799eeb78-7814-4ea2-8fb5-7dca8f1489db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Items\Cloth">
+      <UniqueIdentifier>{19a1c0eb-77fd-4ff0-ab8b-c547927fcf02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Items\Head">
+      <UniqueIdentifier>{37ecce3d-384d-4459-b7b8-6d504e15b704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes Files\Items\Etc">
+      <UniqueIdentifier>{7a07d652-d6aa-453d-b558-6ddcebba9ff5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Base.cpp">
+      <Filter>Classes Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Classes Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Classes Files\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Classes Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="SmartPointer.cpp">
+      <Filter>Classes Files\SmartPointer</Filter>
+    </ClCompile>
+    <ClCompile Include="Staff.cpp">
+      <Filter>Classes Files\Character\Staff</Filter>
+    </ClCompile>
+    <ClCompile Include="Playable.cpp">
+      <Filter>Classes Files\Character\Playable</Filter>
+    </ClCompile>
+    <ClCompile Include="Struct.cpp">
+      <Filter>Struct Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cloth.cpp">
+      <Filter>Classes Files\Items\Cloth</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="essential.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Base.h">
+      <Filter>Classes Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Classes Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Classes Files\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Classes Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartPointer.h">
+      <Filter>Classes Files\SmartPointer</Filter>
+    </ClInclude>
+    <ClInclude Include="Staff.h">
+      <Filter>Classes Files\Character\Staff</Filter>
+    </ClInclude>
+    <ClInclude Include="Playable.h">
+      <Filter>Classes Files\Character\Playable</Filter>
+    </ClInclude>
+    <ClInclude Include="Sturct.h">
+      <Filter>Struct Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cloth.h">
+      <Filter>Classes Files\Items\Cloth</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
