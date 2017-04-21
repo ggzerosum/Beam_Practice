@@ -60,7 +60,7 @@ const char* idol::GetWords() const
 void idol::PrintText(const char* text)
 {
 	char chr;
-	size_t len = strlen(text);
+	int len = strlen(text);
 
 	for (int i = 0; i<len; i++)
 	{
