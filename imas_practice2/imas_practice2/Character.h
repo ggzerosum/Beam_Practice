@@ -12,5 +12,7 @@ namespace My_NameSpace
 		//virtual methods
 		virtual void Use() = 0;
 		virtual void PrintInfo() const = 0;
+		virtual void addItem(const char* name, int price, GRADES grade) = 0;
+		virtual void EquipItem(const char* target) = 0;
 	};
 }
