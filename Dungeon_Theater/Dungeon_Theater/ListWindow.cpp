@@ -1,8 +1,20 @@
 #include "stdafx.h"
-#include "Dungeon_Theater.h"
 #include "ListWindow.h"
 
+namespace ns = myNameSpace;
 extern HINSTANCE hInst;
+extern ns::Brush ChildBackGroundBrush;
+extern ns::Brush ChildTitleBarBrush;
+extern ns::Brush ChildSubTitleBarBrush;
+
+enum
+{
+	ID_TitleBar			= 0	,
+	ID_SubTitleBar			,
+
+	height_TitleBar		= 25,
+	height_SubTitleBar	= 30,
+};
 
 namespace myNameSpace
 {
@@ -24,13 +36,13 @@ namespace myNameSpace
 		wcex.cbSize = sizeof(WNDCLASSEX);
 
 		wcex.style = CS_HREDRAW | CS_VREDRAW;
-		wcex.lpfnWndProc = WndProc;
+		wcex.lpfnWndProc = ListWindow::WndProc;
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
 		wcex.hInstance = hInstance;
 		wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_DUNGEON_THEATER));
 		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
-		wcex.hbrBackground = GetStockBrush(WHITE_BRUSH);
+		wcex.hbrBackground = ChildBackGroundBrush.getHandle();
 		wcex.lpszMenuName = NULL;
 		wcex.lpszClassName = ListWindow::classname;
 		wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
@@ -44,7 +56,31 @@ namespace myNameSpace
 		{
 			case WM_CREATE:
 			{
+				RECT rt;
+				GetClientRect(hWnd, &rt);
+				CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)ID_TitleBar, hInst, NULL);
+				CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, height_TitleBar, rt.right, height_SubTitleBar, hWnd, (HMENU)ID_SubTitleBar, hInst, NULL);
+			}
+			break;
 
+			case WM_CTLCOLORSTATIC:
+			{
+				HWND handle = (HWND)lParam;
+				int id = GetDlgCtrlID(handle);
+
+				switch (id)
+				{
+					case ID_TitleBar:
+						return (LRESULT)ChildTitleBarBrush.getHandle();
+						break;
+
+					case ID_SubTitleBar:
+						return (LRESULT)ChildSubTitleBarBrush.getHandle();
+						break;
+
+					default:
+						break;
+				}
 			}
 			break;
 

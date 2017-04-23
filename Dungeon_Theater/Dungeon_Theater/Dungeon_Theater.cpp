@@ -14,6 +14,10 @@ WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
 ns::Brush TitleBarBrush(RGB(214, 219, 233));	// titlebar color
 ns::Brush BackGroundBrush(RGB(41, 58, 86));		// background color
+ns::Brush ChildBackGroundBrush(RGB(255,255,255));
+ns::Brush ChildTitleBarBrush(RGB(77, 96, 130));
+ns::Brush ChildSubTitleBarBrush(RGB(207, 214, 229));
+ns::Brush ChatBoxBackGroundBrush(RGB(240, 240, 240));
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -38,6 +42,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDC_DUNGEON_THEATER, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
 	ns::ListWindow::RegistClass(hInstance);
+	ns::ChatWindow::RegistClass(hInstance);
+	ns::ProgressWindow::RegistClass(hInstance);
+	ns::DetailedListWindow::RegistClass(hInstance);
 
     // Perform application initialization:
     if (!InitInstance (hInstance, nCmdShow))
@@ -105,7 +112,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // Store instance handle in our global variable
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_POPUP | WS_BORDER | WS_VISIBLE | WS_CLIPCHILDREN,
-      200, 200, 750, 500, nullptr, nullptr, hInstance, nullptr);
+      200, 200, MyMainWindow_Width, MyMainWindow_Height, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
@@ -128,6 +135,20 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - post a quit message and return
 //
 //
+enum
+{
+	padding = 5,
+	height_TitleBar = 60,
+
+	width_List = 200,
+	height_List = 428,
+
+	X_Chat = 195,
+	width_Chat = 360,
+	height_Chat = 300,
+
+};
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -138,12 +159,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 			RECT rt;
 			GetClientRect(hWnd, &rt);
-			CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, 0, 0, rt.right, 60, hWnd, (HMENU)0, hInst, NULL);
-			
-			//ScreenToClient(hWnd, (PPOINT)&rt);
-			//ScreenToClient(hWnd, (PPOINT)&rt.right);
+			CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)-1, hInst, NULL);
 
-			ns::ListWindow CharacterListWindow(5, 65, (rt.right / 3), 428, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			ns::ChatWindow MyChatWindow(X_Chat, height_TitleBar + padding, width_Chat, height_Chat, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			ns::ListWindow MyCharacterListWindow(rt.left + padding, height_TitleBar + padding, X_Chat - padding * 2, height_List, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			ns::ProgressWindow MyProgressWindow(X_Chat, height_TitleBar + height_Chat + padding * 2, width_Chat, MyMainWindow_Height - height_TitleBar - height_Chat - (padding * 2) - 7, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			ns::DetailedListWindow MyListWindow(width_List + width_Chat, height_TitleBar + padding, MyMainWindow_Width - width_List - width_Chat - padding -2, MyMainWindow_Height - height_TitleBar - (padding * 2) - 2, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
 		}
 		break;
 
@@ -197,7 +218,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			POINT pos = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
 			ScreenToClient(hWnd, &pos);
 
-			if (pos.y <= 60)
+			if (pos.y <= height_TitleBar)
 				return HTCAPTION;
 			else
 				return DefWindowProc(hWnd, WM_NCHITTEST, wParam, lParam);

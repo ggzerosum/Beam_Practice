@@ -31,6 +31,15 @@
     <Filter Include="Window Objects\ChildWindow\ListWindow">
       <UniqueIdentifier>{92e072d9-0740-4bd0-bf2f-2c5e676a1bb8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Window Objects\ChildWindow\ChatWindow">
+      <UniqueIdentifier>{7e80a333-ab10-467e-a83e-1ce803628967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window Objects\ChildWindow\ProgressWindow">
+      <UniqueIdentifier>{a44ea3b4-63ff-4360-9d62-2558cc1a735b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window Objects\ChildWindow\DetailedListWindow">
+      <UniqueIdentifier>{a7169078-34e0-4254-ba49-98e445ddf36f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -60,6 +69,15 @@
     <ClInclude Include="ListWindow.h">
       <Filter>Window Objects\ChildWindow\ListWindow</Filter>
     </ClInclude>
+    <ClInclude Include="ProgressWindow.h">
+      <Filter>Window Objects\ChildWindow\ProgressWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatWindow.h">
+      <Filter>Window Objects\ChildWindow\ChatWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="DetailedListWindow.h">
+      <Filter>Window Objects\ChildWindow\DetailedListWindow</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -76,6 +94,15 @@
     </ClCompile>
     <ClCompile Include="ListWindow.cpp">
       <Filter>Window Objects\ChildWindow\ListWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressWindow.cpp">
+      <Filter>Window Objects\ChildWindow\ProgressWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatWindow.cpp">
+      <Filter>Window Objects\ChildWindow\ChatWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="DetailedListWindow.cpp">
+      <Filter>Window Objects\ChildWindow\DetailedListWindow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

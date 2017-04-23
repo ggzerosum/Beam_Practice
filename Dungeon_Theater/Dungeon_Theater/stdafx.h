@@ -25,3 +25,6 @@
 #include "defines.h"
 #include "Brush.h"
 #include "ListWindow.h"
+#include "ChatWindow.h"
+#include "ProgressWindow.h"
+#include "DetailedListWindow.h"

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Dungeon_Theater.h"
 #include "ChildWindow.h"
 
 namespace myNameSpace
