@@ -4,8 +4,6 @@
 #include "stdafx.h"
 #include "Dungeon_Theater.h"
 
-#define MAX_LOADSTRING 100
-
 
 // Global Variables:
 // 프로세스 전역변수 정의:
@@ -14,8 +12,8 @@ HINSTANCE hInst;                                // current instance
 HWND g_hwnd;									// main window handle
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
-ns::Brush TitleBarBrush(RGB(155, 155, 155));		// titlebar color
-ns::Brush SubTitleBarBrush(RGB(155, 155, 155));	// sub titlebar color
+ns::Brush TitleBarBrush(RGB(214, 219, 233));	// titlebar color
+ns::Brush BackGroundBrush(RGB(41, 58, 86));		// background color
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -39,6 +37,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_DUNGEON_THEATER, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
+	ns::ListWindow::RegistClass(hInstance);
 
     // Perform application initialization:
     if (!InitInstance (hInstance, nCmdShow))
@@ -83,7 +82,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hInstance      = hInstance;
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_DUNGEON_THEATER));
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-	wcex.hbrBackground	= (HBRUSH)GetStockObject(WHITE_BRUSH);
+	wcex.hbrBackground	= BackGroundBrush.getHandle();//(HBRUSH)GetStockObject(WHITE_BRUSH);
     wcex.lpszMenuName   = NULL;
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
@@ -106,7 +105,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // Store instance handle in our global variable
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_POPUP | WS_BORDER | WS_VISIBLE | WS_CLIPCHILDREN,
-      200, 200, 500, 500, nullptr, nullptr, hInstance, nullptr);
+      200, 200, 750, 500, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
@@ -139,8 +138,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 			RECT rt;
 			GetClientRect(hWnd, &rt);
-			rt.bottom = 60;
-			CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, 0, 0, rt.right, rt.bottom, hWnd, (HMENU)0, hInst, NULL);
+			CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, 0, 0, rt.right, 60, hWnd, (HMENU)0, hInst, NULL);
+			
+			//ScreenToClient(hWnd, (PPOINT)&rt);
+			//ScreenToClient(hWnd, (PPOINT)&rt.right);
+
+			ns::ListWindow CharacterListWindow(5, 65, (rt.right / 3), 428, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
 		}
 		break;
 
@@ -194,7 +197,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			POINT pos = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
 			ScreenToClient(hWnd, &pos);
 
-			if (pos.y <= 30)
+			if (pos.y <= 60)
 				return HTCAPTION;
 			else
 				return DefWindowProc(hWnd, WM_NCHITTEST, wParam, lParam);

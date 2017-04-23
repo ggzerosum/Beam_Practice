@@ -20,5 +20,8 @@
 
 
 // TODO: reference additional headers your program requires here
+#define MAX_LOADSTRING 100
+
 #include "defines.h"
 #include "Brush.h"
+#include "ListWindow.h"
