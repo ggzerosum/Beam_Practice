@@ -58,7 +58,7 @@ namespace myNameSpace
 			{
 				RECT rt;
 				GetClientRect(hWnd, &rt);
-				CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)ID_TitleBar, hInst, NULL);
+				CreateWindow(TEXT("STATIC"), TEXT(" Ä³¸¯ÅÍ"), WS_CHILD | WS_VISIBLE | SS_CENTERIMAGE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)ID_TitleBar, hInst, NULL);
 				CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, height_TitleBar, rt.right, height_SubTitleBar, hWnd, (HMENU)ID_SubTitleBar, hInst, NULL);
 			}
 			break;
@@ -66,11 +66,14 @@ namespace myNameSpace
 			case WM_CTLCOLORSTATIC:
 			{
 				HWND handle = (HWND)lParam;
+				HDC hdc = (HDC)wParam;
 				int id = GetDlgCtrlID(handle);
 
 				switch (id)
 				{
 					case ID_TitleBar:
+						SetTextColor(hdc, RGB(255, 255, 255));
+						SetBkMode(hdc, TRANSPARENT);
 						return (LRESULT)ChildTitleBarBrush.getHandle();
 						break;
 
