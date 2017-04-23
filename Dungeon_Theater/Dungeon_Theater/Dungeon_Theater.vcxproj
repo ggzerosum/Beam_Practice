@@ -146,11 +146,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brush.h" />
+    <ClInclude Include="CharacterBase.h" />
     <ClInclude Include="ChatWindow.h" />
     <ClInclude Include="ChildWindow.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="DetailedListWindow.h" />
     <ClInclude Include="Dungeon_Theater.h" />
+    <ClInclude Include="Human.h" />
     <ClInclude Include="ListWindow.h" />
     <ClInclude Include="ProgressWindow.h" />
     <ClInclude Include="Resource.h" />
@@ -159,10 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Brush.cpp" />
+    <ClCompile Include="CharacterBase.cpp" />
     <ClCompile Include="ChatWindow.cpp" />
     <ClCompile Include="ChildWindow.cpp" />
     <ClCompile Include="DetailedListWindow.cpp" />
     <ClCompile Include="Dungeon_Theater.cpp" />
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="ListWindow.cpp" />
     <ClCompile Include="ProgressWindow.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -40,6 +40,15 @@
     <Filter Include="Window Objects\ChildWindow\DetailedListWindow">
       <UniqueIdentifier>{a7169078-34e0-4254-ba49-98e445ddf36f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Character Objects">
+      <UniqueIdentifier>{2c424e9a-0833-4861-86e9-da09be78376a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character Objects\CharacterBase">
+      <UniqueIdentifier>{dc568d23-c272-406c-b376-6427fd09875d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character Objects\Human">
+      <UniqueIdentifier>{e1a11f44-4c7d-44f3-8ad9-93ffbc1bd9c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,6 +87,12 @@
     <ClInclude Include="DetailedListWindow.h">
       <Filter>Window Objects\ChildWindow\DetailedListWindow</Filter>
     </ClInclude>
+    <ClInclude Include="CharacterBase.h">
+      <Filter>Character Objects\CharacterBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Character Objects\Human</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -103,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="DetailedListWindow.cpp">
       <Filter>Window Objects\ChildWindow\DetailedListWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterBase.cpp">
+      <Filter>Character Objects\CharacterBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Character Objects\Human</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

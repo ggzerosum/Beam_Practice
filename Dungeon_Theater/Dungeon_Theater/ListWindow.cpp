@@ -58,7 +58,7 @@ namespace myNameSpace
 			{
 				RECT rt;
 				GetClientRect(hWnd, &rt);
-				CreateWindow(TEXT("STATIC"), TEXT(" Ä³¸¯ÅÍ"), WS_CHILD | WS_VISIBLE | SS_CENTERIMAGE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)ID_TitleBar, hInst, NULL);
+				CreateWindow(TEXT("STATIC"), TEXT(" Character"), WS_CHILD | WS_VISIBLE | SS_CENTERIMAGE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)ID_TitleBar, hInst, NULL);
 				CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, height_TitleBar, rt.right, height_SubTitleBar, hWnd, (HMENU)ID_SubTitleBar, hInst, NULL);
 			}
 			break;
