@@ -4,7 +4,6 @@
 #include "stdafx.h"
 #include "Dungeon_Theater.h"
 
-
 // Global Variables:
 // 프로세스 전역변수 정의:
 namespace ns = myNameSpace;

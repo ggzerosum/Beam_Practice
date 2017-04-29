@@ -23,6 +23,8 @@
 #define MAX_LOADSTRING 100
 
 #include "defines.h"
+#include "SingleTone.h"
+
 #include "Brush.h"
 #include "ListWindow.h"
 #include "ChatWindow.h"

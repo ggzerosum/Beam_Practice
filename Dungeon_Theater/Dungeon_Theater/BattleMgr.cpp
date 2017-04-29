@@ -10,6 +10,7 @@ namespace myNameSpace
 
 	BattleMgr::~BattleMgr()
 	{
+		CLEARSINGLETONE(BattleMgr);
 	}
 
 	//√ ±‚»≠

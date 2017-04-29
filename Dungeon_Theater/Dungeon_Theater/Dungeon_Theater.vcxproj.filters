@@ -55,9 +55,6 @@
     <Filter Include="Obj\Item Objects">
       <UniqueIdentifier>{cd28341d-af84-4475-9a4c-c7e538a7fd27}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Obj\Battle Manager">
-      <UniqueIdentifier>{edd232ac-5359-4e17-9af1-30bae209b94c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Obj\Item Objects\ItemBase">
       <UniqueIdentifier>{f92000e4-ef2a-45ef-b984-ba45d5005b33}</UniqueIdentifier>
     </Filter>
@@ -81,6 +78,21 @@
     </Filter>
     <Filter Include="Obj\Modules\Render Module">
       <UniqueIdentifier>{c3899a1a-8e49-4fde-8795-48a1af980732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Manager Objects">
+      <UniqueIdentifier>{d7967802-4198-443b-9a14-1ad51f635ef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Manager Objects\Battle Manager">
+      <UniqueIdentifier>{edd232ac-5359-4e17-9af1-30bae209b94c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Manager Objects\Item Manager">
+      <UniqueIdentifier>{bf444a6e-8222-4766-a068-10b70febe3e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Templates">
+      <UniqueIdentifier>{feaca793-8128-4726-b965-62d7590ad362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Templates\SingleTone">
+      <UniqueIdentifier>{a64bf68f-7b90-4505-a48b-049666e0ef59}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +139,7 @@
       <Filter>Obj\Character Objects\Human</Filter>
     </ClInclude>
     <ClInclude Include="BattleMgr.h">
-      <Filter>Obj\Battle Manager</Filter>
+      <Filter>Obj\Manager Objects\Battle Manager</Filter>
     </ClInclude>
     <ClInclude Include="ItemBase.h">
       <Filter>Obj\Item Objects\ItemBase</Filter>
@@ -149,6 +161,9 @@
     </ClInclude>
     <ClInclude Include="RenderModule.h">
       <Filter>Obj\Modules\Render Module</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTone.h">
+      <Filter>Templates\SingleTone</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +198,7 @@
       <Filter>Obj\Character Objects\Human</Filter>
     </ClCompile>
     <ClCompile Include="BattleMgr.cpp">
-      <Filter>Obj\Battle Manager</Filter>
+      <Filter>Obj\Manager Objects\Battle Manager</Filter>
     </ClCompile>
     <ClCompile Include="ItemBase.cpp">
       <Filter>Obj\Item Objects\ItemBase</Filter>
