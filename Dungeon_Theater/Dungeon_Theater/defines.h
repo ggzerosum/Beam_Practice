@@ -12,3 +12,13 @@
 
 #define MAX_TENSION 100
 #define MAX_EXP 10000
+
+#define MAX_GROUP_MEMBER 4
+
+//Copy str from source to des
+//"defines.h"
+inline void StrToDes(PTSTR& des, PCTSTR source)
+{
+	des = new TCHAR[lstrlen(source) + 1];
+	lstrcpy(des, source);
+}

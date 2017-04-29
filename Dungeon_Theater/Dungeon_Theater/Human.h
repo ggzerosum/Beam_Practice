@@ -3,33 +3,22 @@
 
 namespace myNameSpace
 {
+	class ItemBase;
+
 	class Human :
 		public CharacterBase
 	{
 	private:
-		char *item; //아이템 공간 임시
+		ItemBase* item;
 
 	public:
-		Human();
-		~Human();
+		Human(HBITMAP Bitmap, PTSTR name, ItemBase* item, int expMelee = 0, int expFirearm = 0, int expMedikit = 0);
+		virtual ~Human();
+
+		void		setItem	(ItemBase* targetItem);
+		ItemBase*	getItem	() const;
 
 	public:
-		void setPortrait();
-		void setName(PCTSTR source);
-		void setItem();
-		void setHp(int value);
-		void setTension(int value);
-		void setExpMelee(int value);
-		void setExpFirearm(int value);
-		void setExpMedikit(int value);
-
-		HBITMAP getPortrait();
-		PCTSTR getName();
-		void getItem();
-		int getHp();
-		int getTension();
-		int getExpMelee();
-		int getExpFirearm();
-		int getExpMedikit();
+		virtual void useItem();
 	};
 }

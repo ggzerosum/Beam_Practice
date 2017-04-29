@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "Human.h"
+#include "ItemBase.h"
 
 namespace myNameSpace
 {
-	Human::Human()
-		:CharacterBase(), item(nullptr)
+	Human::Human(HBITMAP Bitmap, PTSTR name, ItemBase* item, int expMelee, int expFirearm, int expMedikit)
+		:CharacterBase(Bitmap, name, expMelee, expFirearm, expMedikit), item(item)
 	{
 	}
 
@@ -15,45 +16,19 @@ namespace myNameSpace
 	}
 
 
-	void Human::setPortrait()
+	void Human::setItem(ItemBase* targetItem)
 	{
-
+		item = targetItem;
 	}
 
-	void Human::setName(PCTSTR source)
+	ItemBase* Human::getItem() const
 	{
-
-	}
-
-	void Human::setItem()
-	{
-
-	}
-
-	void Human::setHp(int value)
-	{
-		hp = value;
-	}
-
-	void Human::setTension(int value)
-	{
-		tension = value;
-	}
-
-	void Human::setExpMelee(int value)
-	{
-		exp_melee = value;
-	}
-
-	void Human::setExpFirearm(int value)
-	{
-		exp_firearm = value;
-	}
-
-	void Human::setExpMedikit(int value)
-	{
-		exp_medikit = value;
+		return item;
 	}
 
 
+	void Human::useItem()
+	{
+		item->use();
+	}
 }

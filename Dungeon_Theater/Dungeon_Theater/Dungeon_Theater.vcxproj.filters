@@ -13,14 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Drawing Objects">
-      <UniqueIdentifier>{ef8fbb46-8598-4ea8-af69-a688f2be4a71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Drawing Objects\Brush">
-      <UniqueIdentifier>{38e2be1d-9dac-42e7-add4-3ee61449420a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\includes">
       <UniqueIdentifier>{e8e91384-0ebd-4a4c-b14e-1e438d788dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj">
+      <UniqueIdentifier>{ae5fa74f-f7fd-49a9-81ab-330f9154567f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Window Objects">
       <UniqueIdentifier>{53ec0ce6-cb45-4cf5-9030-a85c18767f73}</UniqueIdentifier>
@@ -40,14 +37,50 @@
     <Filter Include="Window Objects\ChildWindow\DetailedListWindow">
       <UniqueIdentifier>{a7169078-34e0-4254-ba49-98e445ddf36f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Character Objects">
+    <Filter Include="Obj\Character Objects">
       <UniqueIdentifier>{2c424e9a-0833-4861-86e9-da09be78376a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Character Objects\CharacterBase">
+    <Filter Include="Obj\Character Objects\CharacterBase">
       <UniqueIdentifier>{dc568d23-c272-406c-b376-6427fd09875d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Character Objects\Human">
+    <Filter Include="Obj\Character Objects\Human">
       <UniqueIdentifier>{e1a11f44-4c7d-44f3-8ad9-93ffbc1bd9c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Drawing Objects">
+      <UniqueIdentifier>{ef8fbb46-8598-4ea8-af69-a688f2be4a71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Drawing Objects\Brush">
+      <UniqueIdentifier>{38e2be1d-9dac-42e7-add4-3ee61449420a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Item Objects">
+      <UniqueIdentifier>{cd28341d-af84-4475-9a4c-c7e538a7fd27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Battle Manager">
+      <UniqueIdentifier>{edd232ac-5359-4e17-9af1-30bae209b94c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Item Objects\ItemBase">
+      <UniqueIdentifier>{f92000e4-ef2a-45ef-b984-ba45d5005b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Item Objects\Gun">
+      <UniqueIdentifier>{665a8410-3e4f-45c4-8afd-cdd8c2684997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Item Objects\MeleeWeapon">
+      <UniqueIdentifier>{0d091210-7883-46ee-b243-6b7d1ef8a10f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Item Objects\Medikit">
+      <UniqueIdentifier>{f22afcc1-b36f-4d16-a8e1-87c8340086e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Group">
+      <UniqueIdentifier>{8b04ab5c-d033-4f3b-bce8-e2910abf83e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Modules">
+      <UniqueIdentifier>{caf2b072-e3fa-4042-939c-c0f45309bf63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Modules\Combat Module">
+      <UniqueIdentifier>{79ab46ef-b5cc-452f-8cd1-21f3aa310483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Modules\Render Module">
+      <UniqueIdentifier>{c3899a1a-8e49-4fde-8795-48a1af980732}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,7 +100,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Brush.h">
-      <Filter>Drawing Objects\Brush</Filter>
+      <Filter>Obj\Drawing Objects\Brush</Filter>
     </ClInclude>
     <ClInclude Include="defines.h">
       <Filter>Header Files\includes</Filter>
@@ -88,10 +121,34 @@
       <Filter>Window Objects\ChildWindow\DetailedListWindow</Filter>
     </ClInclude>
     <ClInclude Include="CharacterBase.h">
-      <Filter>Character Objects\CharacterBase</Filter>
+      <Filter>Obj\Character Objects\CharacterBase</Filter>
     </ClInclude>
     <ClInclude Include="Human.h">
-      <Filter>Character Objects\Human</Filter>
+      <Filter>Obj\Character Objects\Human</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleMgr.h">
+      <Filter>Obj\Battle Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBase.h">
+      <Filter>Obj\Item Objects\ItemBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>Obj\Item Objects\Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="MeleeWeapon.h">
+      <Filter>Obj\Item Objects\MeleeWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Medikit.h">
+      <Filter>Obj\Item Objects\Medikit</Filter>
+    </ClInclude>
+    <ClInclude Include="Group.h">
+      <Filter>Obj\Group</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatModule.h">
+      <Filter>Obj\Modules\Combat Module</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderModule.h">
+      <Filter>Obj\Modules\Render Module</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +159,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Brush.cpp">
-      <Filter>Drawing Objects\Brush</Filter>
+      <Filter>Obj\Drawing Objects\Brush</Filter>
     </ClCompile>
     <ClCompile Include="ChildWindow.cpp">
       <Filter>Window Objects\ChildWindow</Filter>
@@ -120,10 +177,34 @@
       <Filter>Window Objects\ChildWindow\DetailedListWindow</Filter>
     </ClCompile>
     <ClCompile Include="CharacterBase.cpp">
-      <Filter>Character Objects\CharacterBase</Filter>
+      <Filter>Obj\Character Objects\CharacterBase</Filter>
     </ClCompile>
     <ClCompile Include="Human.cpp">
-      <Filter>Character Objects\Human</Filter>
+      <Filter>Obj\Character Objects\Human</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleMgr.cpp">
+      <Filter>Obj\Battle Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBase.cpp">
+      <Filter>Obj\Item Objects\ItemBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>Obj\Item Objects\Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="MeleeWeapon.cpp">
+      <Filter>Obj\Item Objects\MeleeWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Medikit.cpp">
+      <Filter>Obj\Item Objects\Medikit</Filter>
+    </ClCompile>
+    <ClCompile Include="Group.cpp">
+      <Filter>Obj\Group</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatModule.cpp">
+      <Filter>Obj\Modules\Combat Module</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderModule.cpp">
+      <Filter>Obj\Modules\Render Module</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
