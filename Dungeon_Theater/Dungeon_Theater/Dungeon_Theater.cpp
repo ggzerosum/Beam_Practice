@@ -40,10 +40,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_DUNGEON_THEATER, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
-	ns::ListWindow::RegistClass(hInstance);
-	ns::ChatWindow::RegistClass(hInstance);
-	ns::ProgressWindow::RegistClass(hInstance);
-	ns::DetailedListWindow::RegistClass(hInstance);
+
+	ns::ChildWndFactoryBase* factory = GETSINGLETONE(ns::ChildWndFactory);
+	factory->registChatWnd(hInstance);
+	factory->registDetailedListWnd(hInstance);
+	factory->registListWnd(hInstance);
+	factory->registProgressWnd(hInstance);
 
     // Perform application initialization:
     if (!InitInstance (hInstance, nCmdShow))
@@ -160,10 +162,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			GetClientRect(hWnd, &rt);
 			CreateWindow(TEXT("STATIC"), NULL, WS_CHILD | WS_VISIBLE, rt.left, rt.top, rt.right, height_TitleBar, hWnd, (HMENU)-1, hInst, NULL);
 
-			ns::ChatWindow MyChatWindow(X_Chat, height_TitleBar + padding, width_Chat, height_Chat, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
-			ns::ListWindow MyCharacterListWindow(rt.left + padding, height_TitleBar + padding, X_Chat - padding * 2, height_List, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
-			ns::ProgressWindow MyProgressWindow(X_Chat, height_TitleBar + height_Chat + padding * 2, width_Chat, MyMainWindow_Height - height_TitleBar - height_Chat - (padding * 2) - 7, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
-			ns::DetailedListWindow MyListWindow(width_List + width_Chat, height_TitleBar + padding, MyMainWindow_Width - width_List - width_Chat - padding -2, MyMainWindow_Height - height_TitleBar - (padding * 2) - 2, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			ns::ChildWndFactoryBase* factory = GETSINGLETONE(ns::ChildWndFactory);
+			factory->createChatWnd(X_Chat, height_TitleBar + padding, width_Chat, height_Chat, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			factory->createListWnd(rt.left + padding, height_TitleBar + padding, X_Chat - padding * 2, height_List, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			factory->createProgressWnd(X_Chat, height_TitleBar + height_Chat + padding * 2, width_Chat, MyMainWindow_Height - height_TitleBar - height_Chat - (padding * 2) - 7, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
+			factory->createDetailedListWnd(width_List + width_Chat, height_TitleBar + padding, MyMainWindow_Width - width_List - width_Chat - padding - 2, MyMainWindow_Height - height_TitleBar - (padding * 2) - 2, hWnd, WS_CHILD | WS_VISIBLE | WS_BORDER);
 		}
 		break;
 

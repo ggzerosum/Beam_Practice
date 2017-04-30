@@ -26,7 +26,7 @@
 #include "SingleTone.h"
 
 #include "Brush.h"
-#include "ListWindow.h"
-#include "ChatWindow.h"
-#include "ProgressWindow.h"
-#include "DetailedListWindow.h"
+
+//Child Window들은 추상 팩토리 클래스를 통해 생성되므로 ChildWindow 외의 헤더는 필요치 않음.
+#include "ChildWindow.h"
+#include "ChildWndFactory.h"

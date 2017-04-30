@@ -150,6 +150,8 @@
     <ClInclude Include="CharacterBase.h" />
     <ClInclude Include="ChatWindow.h" />
     <ClInclude Include="ChildWindow.h" />
+    <ClInclude Include="ChildWndFactory.h" />
+    <ClInclude Include="ChildWndFactoryBase.h" />
     <ClInclude Include="CombatModule.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="DetailedListWindow.h" />
@@ -174,6 +176,8 @@
     <ClCompile Include="CharacterBase.cpp" />
     <ClCompile Include="ChatWindow.cpp" />
     <ClCompile Include="ChildWindow.cpp" />
+    <ClCompile Include="ChildWndFactory.cpp" />
+    <ClCompile Include="ChildWndFactoryBase.cpp" />
     <ClCompile Include="CombatModule.cpp" />
     <ClCompile Include="DetailedListWindow.cpp" />
     <ClCompile Include="Dungeon_Theater.cpp" />

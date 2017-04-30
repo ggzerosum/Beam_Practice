@@ -91,6 +91,15 @@
     <Filter Include="Templates">
       <UniqueIdentifier>{feaca793-8128-4726-b965-62d7590ad362}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Window Objects\Factory">
+      <UniqueIdentifier>{d37abc96-3666-4ee5-af94-bb8ece12b56d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window Objects\Factory\ChildWndFactoryBase">
+      <UniqueIdentifier>{fb7238ba-40cc-48a7-8626-fd62689b40cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window Objects\Factory\ChildWndFactory">
+      <UniqueIdentifier>{1ce280c5-93a4-4113-a8ff-a24aa5567791}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -162,6 +171,12 @@
     <ClInclude Include="SingleTone.h">
       <Filter>Templates</Filter>
     </ClInclude>
+    <ClInclude Include="ChildWndFactoryBase.h">
+      <Filter>Window Objects\Factory\ChildWndFactoryBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildWndFactory.h">
+      <Filter>Window Objects\Factory\ChildWndFactory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -217,6 +232,12 @@
     </ClCompile>
     <ClCompile Include="RenderModule.cpp">
       <Filter>Obj\Modules\Render Module</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildWndFactoryBase.cpp">
+      <Filter>Window Objects\Factory\ChildWndFactoryBase</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildWndFactory.cpp">
+      <Filter>Window Objects\Factory\ChildWndFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
