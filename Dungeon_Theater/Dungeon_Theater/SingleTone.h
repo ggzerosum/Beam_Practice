@@ -13,7 +13,7 @@ namespace myNameSpace
 	class SingleTone
 	{
 	private:
-		static T* marker;
+		static T* Inst;
 
 	public:
 		static T*	get();
@@ -22,22 +22,22 @@ namespace myNameSpace
 
 
 	template<typename T>
-	T* SingleTone<T>::marker = nullptr;
+	T* SingleTone<T>::Inst = nullptr;
 
 	template<typename T>
 	T* SingleTone<T>::get()
 	{
-		if (marker == nullptr)
+		if (Inst == nullptr)
 		{
-			marker = new T;
+			Inst = new T;
 		}
 
-		return marker;
+		return Inst;
 	}
 
 	template<typename T>
 	void SingleTone<T>::del()
 	{
-		marker = nullptr;
+		Inst = nullptr;
 	}
 }

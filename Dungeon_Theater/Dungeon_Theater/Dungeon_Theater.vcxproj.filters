@@ -91,9 +91,6 @@
     <Filter Include="Templates">
       <UniqueIdentifier>{feaca793-8128-4726-b965-62d7590ad362}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Templates\SingleTone">
-      <UniqueIdentifier>{a64bf68f-7b90-4505-a48b-049666e0ef59}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -163,7 +160,7 @@
       <Filter>Obj\Modules\Render Module</Filter>
     </ClInclude>
     <ClInclude Include="SingleTone.h">
-      <Filter>Templates\SingleTone</Filter>
+      <Filter>Templates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
